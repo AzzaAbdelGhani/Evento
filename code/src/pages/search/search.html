@@ -1,0 +1,30 @@
+<!--
+  Generated template for the SearchPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Search</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    
+      <ion-list>
+        <ion-item *ngFor="let item of arrUsers">
+          <ion-thumbnail item-start>
+            <img src="{{ item.photo }}">
+          </ion-thumbnail>
+          <h2>{{ item.firstname }} {{ item.lastname }}</h2>
+          <p>{{ item.address }}</p>
+          <button ion-button clear item-end (click)="showPage(item)">View</button>
+        </ion-item>
+      </ion-list>
+
+</ion-content>

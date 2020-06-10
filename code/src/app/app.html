@@ -1,0 +1,14 @@
+<ion-menu [content]="content">
+ <ion-content class="bg-color">
+
+   <ion-list no-lines class="mm">
+    <button menu-close ion-item *ngFor="let p of pages" (click)="openPage(p)">
+    <ion-icon [name]="p.icon" item-left></ion-icon>
+    {{p.title}}</button>
+   
+  </ion-list>
+ </ion-content>
+
+</ion-menu>
+<ion-nav #content [root]="rootPage" swipeBackEnabled="false"></ion-nav>
+<!--[class.activeHighLight]="checkActive(p)"-->

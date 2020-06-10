@@ -1,0 +1,44 @@
+<!--
+  Generated template for the ShowEventPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{evname}}</ion-title>
+
+    
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="showev">
+
+  <p>Description : {{evData1.desc}}</p>
+  <p>Email : {{evData1.email}}</p>
+  <p>Location : {{evData1.city}}, {{evData1.location}}</p>
+  <p>Date : {{evData1.day}} of {{evData1.month}} {{evData1.year}}</p>
+  <p>Time : {{evData1.time}}</p>
+  <p>Number of registered : {{evData1.regnumber}}</p>
+  <p>Max Number of Attendence: {{evData1.maxnumber}}</p>
+
+  <button ion-button round block (click)="showModal()">
+      <ion-icon name="md-edit"></ion-icon>
+    Update</button>
+  <p class="bostyle"></p>
+
+  
+
+    <ion-list inset >
+        <p>
+            Registered names :
+        </p>
+        <button ion-item #first *ngFor="let seq of evData" (click)="scanCode(first)" >
+          {{seq.name}}
+        </button> 
+      </ion-list>
+    
+</ion-content>
